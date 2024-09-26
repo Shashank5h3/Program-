@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="styles2.css">
+</head>
+<body>
+    <div class="login-container">
+        <form id="login-form" onsubmit="return handleLogin(event);">
+            <div class="input-group">
+                <label for="Username">Username:</label>
+                <input type="text" id="Username" name="Username" required>
+            </div>
+            <div class="input-group">
+                <label for="Password">Password:</label>
+                <input type="password" id="Password" name="Password" required>
+            </div>
+            <div class="button-group">
+                <input type="button" value="Cancel">
+                <input type="submit" value="Login">
+            </div>
+        </form>
+        <div id="message" class="message" style="display: none;">
+            <p>Login Successful! 🎉</p>
+            <img src="https://media1.tenor.com/m/8eMBFjBztGsAAAAd/children-desperate-walking.gif" alt="Success GIF" class="success-gif">
+        </div>
+    </div>
+
+    <script>
+        function handleLogin(event) {
+            event.preventDefault(); // Prevent the default form submission
+            // Display the success message and GIF
+            const messageDiv = document.getElementById('message');
+            messageDiv.style.display = "block"; // Show the message
+            return false; // Prevent further action
+        }
+    </script>
+</body>
+</html>
